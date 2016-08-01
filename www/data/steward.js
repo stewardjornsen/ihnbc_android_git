@@ -82,16 +82,12 @@ $(document).ready(function (e) {
 //                    </div></div>');
 
  $('#ihnbc_calender_box').append('<div class="row">\n\
-                                        <div class="col-xs-3">\n\
-                                         <a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs" href="data/designs/' + obj.photo + '">\n\
-                                            <img class="img-responsive" src="data/designs/' + obj.photo + '" alt="' + obj.title + '" width="110" height="110">\n\
-                                        </a>\n\
-                                        </div>\n\
-                                        <div class="col-xs-9">\n\
-                                            <h4 class="heading-primary mb-none">' + obj.title + ' </h4>\n\
+                                        <div class="col-xs-12">\n\
+                                         <h4 class="heading-primary mb-none"><a class="" href="data/designs/' + obj.photo + '">\n\
+                                        </a>' + obj.title + ' </h4>\n\
                                             <small> <i class="fa fa-calendar"></i> ' + obj.date + '</small>\
-                                        </div>\n\
-                                </div>');
+                                        </div>\
+                                </div><hr class="solid mt-sm mb-sm" />');
 
             slider += ' \n\
                         <li data-transition="fade">\n\
