@@ -20,6 +20,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
 
+
+
+
         // app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -81,7 +84,7 @@ $(document).ready(function (e) {
 //                    \n\
 //                    </div></div>');
 
- $('#ihnbc_calender_box').append('<div class="row">\n\
+            $('#ihnbc_calender_box').append('<div class="row">\n\
                                         <div class="col-xs-12">\n\
                                          <h4 class="heading-primary mb-none">\n\
                                         <a class="" href="data/designs/' + obj.photo + '">\n\
@@ -199,7 +202,10 @@ $(document).ready(function (e) {
     }
 
 
-
+    $.get('data/pages/header.html', {}, function (header) {
+        $('[data-role="page"]').prepend(header);
+    });
+    $('.ui-content').prepend(' <div style="margin: 140px"></div>');
 
     // $('#people').text('Hello World');
 });

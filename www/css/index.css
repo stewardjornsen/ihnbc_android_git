@@ -34,3 +34,13 @@ input{
     -ms-user-drag: none;
     user-drag: none;
 }
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+    background-color: inherit;
+    border-color: #4a4a4a;
+    color: inherit;
+    text-shadow: 0 1px 0 #444444;
+}
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    color: inherit;
+    font-weight: bold;
+}
