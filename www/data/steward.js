@@ -42,6 +42,18 @@ var app = {
 
 
 $(document).ready(function (e) {
+    
+    
+    //LOAD HEADER
+    $.get('data/pages/panel.html', {}, function (html) {
+        $.mobile.pageContainer.prepend(html);
+        $("#mypanel").panel();
+    });
+    //LOAD FOOTER
+    $.get('data/pages/footer.html', {}, function (html) {
+        $.mobile.pageContainer.append(html);
+    });
+    
     data = "";
 
     //var json = http://localhost/rough.php;
@@ -68,7 +80,7 @@ $(document).ready(function (e) {
             //GET UPCOMING EVENT
 
             if (eventdate(obj.date) && current_event == true) {
-                $('#recent_event, #recent_event_1').hide().append('<img src="images/' +
+                $('#recent_event, #recent_event_1').hide().append('<h2 class="mb-sm">Upcoming Event: </h2><img src="data/designs/' +
                         obj.photo + '" class="img-responsive" />').fadeIn('slow');
                 $('#recent_event_title').fadeIn('slow');
                 current_event = false;
@@ -141,38 +153,6 @@ $(document).ready(function (e) {
 
 
 
-    var menu_items = {
-        page1: "Home",
-        page5: "Events",
-        page7: "Media",
-        page8: "People"
-    };
-
-    var panel;
-    var panel_start = '<div data-role="panel" id="mypanel" data-position="right" data-display="push">' +
-            '<h1>IHNBC</h1>' +
-            '<ul id="sidemenu" data-role="listview" class="nav nav-list unstyled">';
-    var panel_end = '</ul>' +
-            '</div>';
-    var panel_mid;
-
-    function createpanel() {
-        $(menu_items).each(function (x, e) {
-            keys = $.map(e, function (v, i) {
-                panel_start += '<li><a href="#' + i + '" data-transition="fade" data-theme="" data-icon="gear">' + v + '</a></li>';
-
-            });
-
-        });
-        panel_start += panel_end;
-        $.mobile.pageContainer.prepend(panel_start);
-
-        $("#mypanel").panel();
-    }
-
-
-
-    //console.log(j);
 
     function eventdate(event_date) {
         var now = new Date();
@@ -205,7 +185,7 @@ $(document).ready(function (e) {
     $.get('data/pages/header.html', {}, function (header) {
         $('[data-role="page"]').prepend(header);
     });
-    $('.ui-content').prepend(' <div style="margin: 140px"></div>');
+    //$('.ui-content').prepend(' <div style="margin: 140px"></div>');
 
     // $('#people').text('Hello World');
 });
