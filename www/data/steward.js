@@ -83,8 +83,9 @@ $(document).ready(function (e) {
 
  $('#ihnbc_calender_box').append('<div class="row">\n\
                                         <div class="col-xs-12">\n\
-                                         <h4 class="heading-primary mb-none"><a class="" href="data/designs/' + obj.photo + '">\n\
-                                        </a>' + obj.title + ' </h4>\n\
+                                         <h4 class="heading-primary mb-none">\n\
+                                        <a class="" href="data/designs/' + obj.photo + '">\n\
+                                        ' + obj.title + '</a> </h4>\n\
                                             <small> <i class="fa fa-calendar"></i> ' + obj.date + '</small>\
                                         </div>\
                                 </div><hr class="solid mt-sm mb-sm" />');
